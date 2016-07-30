@@ -9,4 +9,21 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+   <!-- vote 투표 -->
+   <servlet>
+   	<!-- 사용할 서블릿 이름 -->
+   	<servlet-name>vote</servlet-name>
+   	<!-- 서블릿 클래스 설정 -->
+   	<servlet-class>com.webProjectEx.vote.Vote</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+   	<!-- 호출할 서블릿 이름 -->
+   	<servlet-name>vote</servlet-name>
+   	<!-- 서블릿을 호출 할 때 사용될 URL 설정 -->
+   	<url-pattern>/vote.do</url-pattern>
+   </servlet-mapping>
+   
 </web-app>
