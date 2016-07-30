@@ -2,15 +2,16 @@ package com.webProjectEx.vote;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  * 투표에 관된 서블릿
@@ -34,8 +35,15 @@ public class Vote extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		String phoneKind = request.getParameter("phoneKind");
-		System.out.println(name);
-		System.out.println(phoneKind);
+		
+//		// request가 잘 넘어왔는지 확인 테스
+//		System.out.println(name);
+//		System.out.println(phoneKind);
+		
+		request.setAttribute("name", name);
+		request.setAttribute("phoneKind", phoneKind);
+		RequestDispatcher view = request.getRequestDispatcher("voteResult.jsp");
+		view.forward(request, response);
 		
 	}
 
